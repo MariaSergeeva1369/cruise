@@ -3,17 +3,26 @@ const headerElement = document.querySelector('[header-wrapper]');
 const logoElement = document.querySelector('[header-logo]');
 const toggleElement = document.querySelector('[header-toggle]');
 
+if (headerElement) {
+  headerElement.classList.remove('is-nojs');
+}
+
 if (navElement) {
   navElement.classList.remove('is-nojs');
-  headerElement.classList.remove('is-nojs');
+}
+
+if (logoElement) {
   logoElement.classList.remove('is-nojs');
 }
 
 const openMenu = () => {
-  headerElement.classList.toggle('is-opened');
-  logoElement.classList.toggle('is-opened');
   navElement.classList.toggle('is-opened');
   navElement.classList.toggle('is-closed');
+  headerElement.classList.toggle('is-opened');
+  logoElement.classList.toggle('is-opened');
 };
 
-toggleElement.addEventListener('click', openMenu);
+if (headerElement && navElement) {
+  toggleElement.addEventListener('click', openMenu);
+}
+

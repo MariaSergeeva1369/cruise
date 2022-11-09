@@ -1,15 +1,17 @@
 .header {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 320px;
 }
 
 .header__wrapper {
-  position: absolute;
-  top: 0;
   padding: 35px 32px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1224px;
 
   @include vp-1023 {
     padding: 30px 45px 15px;
@@ -26,8 +28,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding-bottom: 33px;
+    padding-bottom: 34px;
     background-color: $color-alice-blue;
     width: 89%;
+    min-height: 76px;
   }
 }
