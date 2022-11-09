@@ -28,10 +28,18 @@ html {
 }
 
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   width: 100%;
-  height: 100%;
+  font-family: $ff-main-font;
 
   background-color: $color-default-white;
+}
+
+main {
+  flex-grow: 1;
 }
 
 a {

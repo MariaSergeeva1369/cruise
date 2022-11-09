@@ -1,0 +1,33 @@
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.header__wrapper {
+  position: absolute;
+  top: 0;
+  padding: 35px 32px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp-1023 {
+    padding: 30px 45px 15px;
+  }
+
+  @include vp-767 {
+    padding: 20px 15px;
+  }
+}
+
+@include vp-767 {
+  .header__wrapper.is-nojs,
+  .header__wrapper.is-opened {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-bottom: 33px;
+    background-color: $color-alice-blue;
+    width: 89%;
+  }
+}
