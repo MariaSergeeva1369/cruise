@@ -1,0 +1,165 @@
+.cruise-card {
+  display: grid;
+  padding: 13.45% 9% 11.55% 10.5%;
+  color: $color-alice-blue;
+  background-color: $color-tangaroa;
+  height: 386px;
+  min-width: 23%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/tours/olimpiya.jpg');
+
+  @media (min-resolution: 2dppx) {
+    background-image: url('../img/tours/olimpiya@2x.jpg');
+  }
+
+  &--1 {
+    background-image: url('../img/tours/astoria.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/tours/astoria@2x.jpg');
+    }
+  }
+
+  &--3 {
+    background-image: url('../img/tours/atlantis.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/tours/atlantis@2x.jpg');
+    }
+  }
+
+  &--4 {
+    background-image: url('../img/tours/odisey.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/tours/odisey@2x.jpg');
+    }
+  }
+
+  &--6 {
+    background-image: url('../img/tours/avrora.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/tours/avrora@2x.jpg');
+    }
+  }
+
+  &--7 {
+    background-image: url('../img/tours/leonor.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/tours/leonor@2x.jpg');
+    }
+  }
+
+  &--8 {
+    background-image: url('../img/tours/minion.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/tours/minion@2x.jpg');
+    }
+  }
+
+  @include vp-1023 {
+    padding: 11.32% 11.32% 10%;
+  }
+
+  @include vp-767 {
+    background-position: bottom;
+    padding: 8.5% 9.28% 8.5%;
+
+    &--1 {
+      background-position: 0 40%;
+    }
+  }
+}
+
+.cruise-card__title {
+  align-self: end;
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.cruise-card__inner-wrapper {
+  display: none;
+}
+
+// Пведение при наведении
+
+.cruise-card:hover {
+  background-image: none;
+}
+
+.cruise-card:hover .cruise-card__title {
+  margin: 0 0 22px;
+  align-items: flex-start;
+}
+
+.cruise-card:hover .cruise-card__inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  overflow: scroll;
+}
+
+.cruise-card__list {
+  margin: 0;
+  margin-bottom: auto;
+  padding: 0;
+  list-style: none;
+
+}
+
+.cruise-card__item {
+  &:not(:last-child) {
+    margin-bottom: 19px;
+  }
+}
+
+.cruise-card__inner-title {
+  margin: 0 0 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 11px;
+}
+
+.cruise-card__inner-description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.cruise-card__button {
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: 2.5%;
+  display: block;
+  min-height: 40px;
+  width: 100%;
+  background-color: $color-alice-blue;
+  color: $color-tangaroa;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include vp-1023 {
+    margin: 0;
+  }
+
+  @include vp-767 {
+    margin-bottom: 5.1%;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}

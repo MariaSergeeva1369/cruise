@@ -1,5 +1,4 @@
 .main-block {
-
   background-color: $color-tangaroa;
   background-image: url('../img/main-block.webp');
   background-position: center;
@@ -9,12 +8,8 @@
   color: $color-alice-blue;
   min-width: 320px;
 
-  @include vp-1023 {
-    background-image: url('../img/main-block-tablet.webp');
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/main-block-tablet@2x.webp");
-    }
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/main-block@2x.webp");
   }
 
   @include vp-767 {
@@ -25,36 +20,38 @@
 
 .main-block__wrapper {
   min-height: 650px;
-  padding: 283px 95px;
+  padding: 270px 95px;
   max-width: 1160px;
 
   @include vp-1023 {
-    padding: 280px 45px;
+    min-height: 638px;
+    padding: 272px 45px;
   }
 
   @include vp-767 {
-    padding: 185px 15px;
+    padding: 175px 15px;
     min-height: 500px;
     max-height: 500px;
   }
 }
 
 .main-block__title {
-  margin: 0 0 30px 0;
+  margin: 0 0 12px;
   font-weight: 700;
   font-size: 54px;
   line-height: 66px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @include vp-1023 {
+    margin: 0 0 17px;
     font-size: 50px;
     line-height: 50px;
   }
 
   @include vp-767 {
     font-size: 36px;
-    line-height: 40px;
-    margin-bottom: 20px;
+    line-height: 45px;
+    margin-bottom: 12px;
   }
 }
 
@@ -72,6 +69,6 @@
 
   @include vp-767 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 22px;
   }
 }

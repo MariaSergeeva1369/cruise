@@ -18,11 +18,21 @@
  @include vp-1023 {
     font-size: 14px;
     line-height: 17px;
+    column-gap: 23px;
   }
 }
 
 .nav__link {
   color: $color-alice-blue;
+
+  @include hover-focus {
+    opacity: 0.6;
+  }
+
+  @include focus {
+    outline: 1px solid $color-alice-blue;
+    border-radius: 1px;
+  }
 }
 
 //Меню в футере
@@ -61,19 +71,24 @@
 
   .nav .nav__toggle {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 20px;
+    right: 15px;
     width: 24px;
     height: 22px;
     border: none;
     background-color: transparent;
+
+    @include focus {
+      outline: 1px solid $color-alice-blue;
+      opacity: 0.6;
+    }
   }
 
   .nav.is-closed .nav__toggle::before {
     content: "";
     position: absolute;
-    top: 25px;
-    right: 15px;
+    top: 5px;
+    right: 0;
     width: 24px;
     height: 2px;
     background: $color-alice-blue;
@@ -87,12 +102,16 @@
   }
 
   .nav.is-opened .nav__toggle {
+    right: 14px;
+    width: 15px;
+    height: 15px;
+
     &::after,
     &::before {
       content: "";
       position: absolute;
-      top: 25px;
-      right: 15px;
+      top: 6px;
+      right: 1px;
       width: 13px;
       height: 2px;
       background: $color-tangaroa;
@@ -108,6 +127,9 @@
       transform: rotate(-45deg);
     }
 
+    @include focus {
+      outline: 1px solid $color-tangaroa;
+    }
   }
 
   .nav.is-nojs .nav__list,
@@ -129,6 +151,8 @@
 
   .nav.is-nojs .nav__list {
     min-height: auto;
+    position: static;
+    margin-top: 33px;
   }
 
   .nav.is-nojs .nav__item,
@@ -140,6 +164,14 @@
   .nav.is-nojs .nav__link,
   .nav.is-opened .nav__link {
     color: $color-tangaroa;
+
+    @include hover-focus {
+      opacity: 0.6;
+    }
+
+    @include focus {
+      outline: 1px solid $color-tangaroa;
+    }
   }
 
   .nav.is-nojs .header__wrapper,

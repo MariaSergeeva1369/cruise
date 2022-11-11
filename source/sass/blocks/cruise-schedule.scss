@@ -1,0 +1,55 @@
+.cruise-schedule {
+  min-width: 320px;
+}
+
+.cruise-schedule__wrapper {
+  padding: 85px 32px 120px;
+  max-width: 1194px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include vp-1023 {
+    padding: 90px 60px;
+  }
+
+  @include vp-767 {
+    padding: 55px 25px;
+  }
+}
+
+.cruise-schedule__title {
+  margin: 0 0 49px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+
+  @include vp-1023 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @include vp-767 {
+    margin: 0 0 32px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.cruise-schedule__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  list-style: none;
+  width: 100%;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+
+  @include vp-1023 {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}

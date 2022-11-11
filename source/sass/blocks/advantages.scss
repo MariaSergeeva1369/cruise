@@ -1,0 +1,124 @@
+.advantages {
+  background-color: $color-alice-blue;
+  background-image: url('../img/background-advantages.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  min-width: 320px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/background-advantages@2x.webp");
+  }
+}
+
+.advantages__wrapper {
+  padding: 110px 32px;
+  display: flex;
+  flex-direction: column;
+  min-height: 562px;
+  max-width: 1224px;
+
+  @include vp-1023 {
+    padding: 90px 45px 100px;
+  }
+
+  @include vp-767 {
+    padding: 55px 15px 64px;
+  }
+}
+
+.advantages__title {
+  align-self: center;
+  margin: 0 0 49px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+
+  @include vp-1023 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @include vp-767 {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 32px;
+  }
+}
+
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  gap: 40px;
+
+  @include vp-1023 {
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.advantages__item {
+  background-color: $color-alice-blue;
+  padding: 80px 30px 46px;
+  background-repeat: no-repeat;
+  background-position: 30px 30px;
+
+  &--ship {
+    background-image: url("../img/svg/ship.svg");
+  }
+
+  &--all-inclusive {
+    background-image: url("../img/svg/all-inclusive.svg");
+  }
+
+  &--boat {
+    background-image: url("../img/svg/boat.svg");
+  }
+
+  @include vp-1023 {
+    min-width: 206px;
+    padding: 70px 16px 20px 20px;
+    background-position: 20px 26px;
+
+    &--ship {
+      background-size: 21px 26px;
+    }
+
+    &--all-inclusive {
+      background-size: 27px 26px;
+    }
+
+    &--boat {
+      background-size: 36px 26px;
+    }
+  }
+
+  @include vp-767 {
+    background-position: 20px 25px;
+    padding: 70px 20px 20px 20px;
+  }
+}
+
+.advantages__item h3 {
+  margin: 0 0 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+
+  @include vp-767 {
+    max-width: 200px;
+  }
+}
+
+.advantages__item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}

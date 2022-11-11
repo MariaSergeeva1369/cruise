@@ -43,6 +43,11 @@
     width: 16px;
     height: 16px;
   }
+
+  @include hover-focus {
+    outline: none;
+    opacity: 0.6;
+  }
 }
 
 .social-list__link svg {
