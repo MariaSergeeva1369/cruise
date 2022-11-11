@@ -1,6 +1,6 @@
 .main-block {
   background-color: $color-tangaroa;
-  background-image: url('../img/main-block.webp');
+  background-image: url("../img/main-block.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,7 +40,7 @@
   font-weight: 700;
   font-size: 54px;
   line-height: 66px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   @include vp-1023 {
     margin: 0 0 17px;
@@ -60,7 +60,7 @@
   font-size: 20px;
   line-height: 24px;
   margin: 0;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   @include vp-1023 {
     font-size: 18px;

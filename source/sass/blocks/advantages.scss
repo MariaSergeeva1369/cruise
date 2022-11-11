@@ -1,6 +1,6 @@
 .advantages {
   background-color: $color-alice-blue;
-  background-image: url('../img/background-advantages.webp');
+  background-image: url("../img/background-advantages.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -66,7 +66,7 @@
 
 .advantages__item {
   background-color: $color-alice-blue;
-  padding: 80px 30px 46px;
+  padding: 81px 30px 45px;
   background-repeat: no-repeat;
   background-position: 30px 30px;
 
