@@ -56,6 +56,7 @@
 .form input[type="checkbox"] + span {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   min-width: 18px;
   min-height: 18px;
   background-color: $color-alice-blue;
@@ -88,7 +89,7 @@
 
 .form label span + span {
   display: inline-block;
-  align-self: center;
+  vertical-align: middle;
   padding-left: 5px;
   font-size: 10px;
   line-height: 13px;
@@ -97,6 +98,17 @@
     padding-left: 8px;
     line-height: 12px;
   }
+}
+
+.form label[data-tel-label] {
+  position: relative;
+}
+
+.form label[data-tel-label] span {
+  position: absolute;
+  top: 44px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .form button {
@@ -109,6 +121,7 @@
   text-align: center;
   border: none;
   width: 100%;
+  cursor: pointer;
 
   @include hover {
     opacity: 0.8;
@@ -117,5 +130,9 @@
   @include focus {
     outline: 2px solid $color-neon-blue;
     outline-offset: -4px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
   }
 }

@@ -63,6 +63,7 @@
 
 .contacts__title {
   margin: 75px 0 30px;
+  padding: 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -118,5 +119,15 @@
     background-image: url("../img/svg/phone.svg");
     width: 18px;
     height: 22px;
+  }
+
+  @include hover-focus {
+    opacity: 0.5;
+  }
+
+  @include focus {
+    outline: 2px solid $color-neon-blue;
+    border-radius: 2px;
+    opacity: 0.8;
   }
 }

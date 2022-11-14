@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   min-width: 320px;
+  z-index: 10;
 
   &.is-nojs {
     position: static;
@@ -26,15 +27,24 @@
   }
 }
 
+.header__logo {
+  margin-right: 25px;
+}
+
+//Поведение на мобилке
 @include vp-767 {
   .header__wrapper.is-opened {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding-bottom: 34px;
     background-color: $color-alice-blue;
     width: 89%;
-    min-height: 76px;
+    height: 100%;
+    overflow: scroll;
   }
 
   .header__wrapper.is-nojs {

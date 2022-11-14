@@ -655,6 +655,17 @@ button,
   margin: 0 auto;
 }
 
+.wrapper.is-opened {
+  background-color: rgba(0, 43, 102, 0.5);
+}
+
+.wrapper.is-opened p,
+.wrapper.is-opened h1,
+.wrapper.is-opened h2,
+.wrapper.is-opened img {
+  display: none;
+}
+
 .btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -800,6 +811,7 @@ button,
   left: 0;
   right: 0;
   min-width: 320px;
+  z-index: 10;
 }
 
 .header.is-nojs {
@@ -818,6 +830,10 @@ button,
   -ms-flex-align: center;
   align-items: center;
   max-width: 1224px;
+}
+
+.header__logo {
+  margin-right: 25px;
 }
 
 .nav__toggle {
@@ -877,9 +893,10 @@ button,
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 2;
   color: #f9fbfd;
   min-width: 320px;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .main-block__wrapper {
@@ -1018,6 +1035,7 @@ button,
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #e3ecf6;
   z-index: 2;
   min-width: 320px;
 }
@@ -1077,6 +1095,7 @@ button,
 
 .advantages__item h3 {
   margin: 0 0 10px;
+  padding: 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;
@@ -1137,34 +1156,34 @@ button,
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../img/tours/olimpiya.jpg");
+  background-image: url("../img/tours/olimpiya.webp");
 }
 
 .cruise-card--1 {
-  background-image: url("../img/tours/astoria.jpg");
+  background-image: url("../img/tours/astoria.webp");
 }
 
 .cruise-card--3 {
-  background-image: url("../img/tours/atlantis.jpg");
+  background-image: url("../img/tours/atlantis.webp");
 }
 
 .cruise-card--4 {
-  background-image: url("../img/tours/odisey.jpg");
+  background-image: url("../img/tours/odisey.webp");
 }
 
 .cruise-card--6 {
-  background-image: url("../img/tours/avrora.jpg");
+  background-image: url("../img/tours/avrora.webp");
 }
 
 .cruise-card--7 {
-  background-image: url("../img/tours/leonor.jpg");
+  background-image: url("../img/tours/leonor.webp");
 }
 
 .cruise-card--8 {
-  background-image: url("../img/tours/minion.jpg");
+  background-image: url("../img/tours/minion.webp");
 }
 
-h3 {
+.cruise-card h3 {
   -ms-flex-item-align: end;
   -ms-grid-row-align: end;
   align-self: end;
@@ -1179,11 +1198,16 @@ h3 {
   display: none;
 }
 
-.cruise-card:hover {
+.cruise-card:hover,
+.cruise-card:focus,
+.cruise-card:focus-within {
   background-image: none;
+  outline: none;
 }
 
-.cruise-card:hover h3 {
+.cruise-card:hover h3,
+.cruise-card:focus h3,
+.cruise-card:focus-within h3 {
   padding: 0;
   margin: 0 0 22px;
   -webkit-box-align: start;
@@ -1191,7 +1215,9 @@ h3 {
   align-items: flex-start;
 }
 
-.cruise-card:hover .cruise-card__inner-wrapper {
+.cruise-card:hover .cruise-card__inner-wrapper,
+.cruise-card:focus .cruise-card__inner-wrapper,
+.cruise-card:focus-within .cruise-card__inner-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1228,7 +1254,7 @@ h3 {
 
 .cruise-card__inner-wrapper a {
   padding: 10px;
-  margin-top: auto;
+  margin-top: 2.5%;
   margin-bottom: 2.5%;
   width: 100%;
   background-color: #f9fbfd;
@@ -1252,6 +1278,7 @@ h3 {
 
 .cruise-card__inner-wrapper a.focus-visible:focus {
   opacity: 0.8;
+  outline: none;
 }
 
 .booking {
@@ -1259,6 +1286,7 @@ h3 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
+  background-color: #e3ecf6;
   min-width: 320px;
 }
 
@@ -1304,6 +1332,7 @@ h3 {
 
 .booking__form-title {
   margin: 0 0 30px;
+  padding: 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1385,6 +1414,7 @@ h3 {
 .form input[type=checkbox] + span {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   min-width: 18px;
   min-height: 18px;
   background-color: #f9fbfd;
@@ -1412,12 +1442,21 @@ h3 {
 
 .form label span + span {
   display: inline-block;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+  vertical-align: middle;
   padding-left: 5px;
   font-size: 10px;
   line-height: 13px;
+}
+
+.form label[data-tel-label] {
+  position: relative;
+}
+
+.form label[data-tel-label] span {
+  position: absolute;
+  top: 44px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .form button {
@@ -1430,11 +1469,16 @@ h3 {
   text-align: center;
   border: none;
   width: 100%;
+  cursor: pointer;
 }
 
 .form button.focus-visible:focus {
   outline: 2px solid #2c39f2;
   outline-offset: -4px;
+}
+
+.form button:disabled {
+  opacity: 0.6;
 }
 
 .contacts {
@@ -1468,6 +1512,7 @@ h3 {
 
 .contacts__title {
   margin: 75px 0 30px;
+  padding: 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1506,6 +1551,16 @@ h3 {
   background-image: url("../img/svg/phone.svg");
   width: 18px;
   height: 22px;
+}
+
+.contacts__phone.focus-visible:focus {
+  opacity: 0.5;
+}
+
+.contacts__phone.focus-visible:focus {
+  outline: 2px solid #2c39f2;
+  border-radius: 2px;
+  opacity: 0.8;
 }
 
 /* @mixin hover-focus {
@@ -1579,6 +1634,11 @@ h3 {
   .logo__icon {
     width: 38px;
     height: 20px;
+  }
+
+  .main-block {
+    -webkit-filter: none;
+    filter: none;
   }
 
   .main-block__wrapper {
@@ -1699,19 +1759,22 @@ h3 {
   }
 
   .cruise-card {
-    padding: 5px 35px 35px;
+    background-position: bottom;
+    padding: 12px 35px 35px;
   }
 
-  h3 {
+  .cruise-card h3 {
     padding: 0;
   }
 
-  .cruise-card:hover h3 {
+  .cruise-card:hover h3,
+  .cruise-card:focus h3,
+  .cruise-card:focus-within h3 {
     margin-bottom: 25px;
   }
 
   .cruise-card__inner-wrapper a {
-    margin: 0;
+    margin-bottom: 0;
   }
 
   .booking {
@@ -1798,13 +1861,24 @@ h3 {
   }
 
   .header__wrapper.is-opened {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     padding-bottom: 34px;
     background-color: #f9fbfd;
     width: 89%;
-    min-height: 76px;
+    height: 100%;
+    overflow: scroll;
   }
 
   .header__wrapper.is-nojs {
@@ -1901,12 +1975,8 @@ h3 {
 
   .nav.is-nojs .nav__list,
   .nav.is-opened .nav__list {
-    margin: 0;
-    padding-left: 15px;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    right: 0;
+    margin: 33px 0 0;
+    padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1920,13 +1990,15 @@ h3 {
     align-items: flex-start;
     font-size: 18px;
     line-height: 22px;
-    min-height: 87vh;
+    height: 100%;
+    overflow: scroll;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
 
   .nav.is-nojs .nav__list {
     min-height: auto;
     position: static;
-    margin-top: 33px;
   }
 
   .nav.is-nojs .nav__item,
@@ -2086,8 +2158,7 @@ h3 {
   }
 
   .cruise-card {
-    background-position: bottom;
-    padding: 8px 25px 23px;
+    padding: 12px 25px 23px;
   }
 
   .cruise-card--1 {
@@ -2197,6 +2268,7 @@ h3 {
 
   .cruise-card__inner-wrapper a:hover:not(.focus-visible) {
     opacity: 0.8;
+    outline: none;
   }
 
   .form input:hover:not(.focus-visible) {
@@ -2206,6 +2278,10 @@ h3 {
 
   .form button:hover:not(.focus-visible) {
     opacity: 0.8;
+  }
+
+  .contacts__phone:hover:not(.focus-visible) {
+    opacity: 0.5;
   }
 }
 
@@ -2219,31 +2295,31 @@ h3 {
   }
 
   .cruise-card {
-    background-image: url("../img/tours/olimpiya@2x.jpg");
+    background-image: url("../img/tours/olimpiya@2x.webp");
   }
 
   .cruise-card--1 {
-    background-image: url("../img/tours/astoria@2x.jpg");
+    background-image: url("../img/tours/astoria@2x.webp");
   }
 
   .cruise-card--3 {
-    background-image: url("../img/tours/atlantis@2x.jpg");
+    background-image: url("../img/tours/atlantis@2x.webp");
   }
 
   .cruise-card--4 {
-    background-image: url("../img/tours/odisey@2x.jpg");
+    background-image: url("../img/tours/odisey@2x.webp");
   }
 
   .cruise-card--6 {
-    background-image: url("../img/tours/avrora@2x.jpg");
+    background-image: url("../img/tours/avrora@2x.webp");
   }
 
   .cruise-card--7 {
-    background-image: url("../img/tours/leonor@2x.jpg");
+    background-image: url("../img/tours/leonor@2x.webp");
   }
 
   .cruise-card--8 {
-    background-image: url("../img/tours/minion@2x.jpg");
+    background-image: url("../img/tours/minion@2x.webp");
   }
 
   .booking {
