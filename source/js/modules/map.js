@@ -14,7 +14,7 @@ function init() {
     balloonContent: '',
   }, {
     iconLayout: 'default#image',
-    iconImageHref: '../img/svg/adress.svg',
+    iconImageHref: 'img/svg/adress.svg',
     iconImageSize: [22, 22],
     iconImageOffset: [-10, -20],
   });
