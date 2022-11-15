@@ -1,6 +1,9 @@
+const map = document.querySelector(['#map']);
 const ymaps = window.ymaps;
 
-ymaps.ready(init);
+if (map) {
+  ymaps.ready(init);
+}
 
 function init() {
   let myMap = new ymaps.Map('map', {

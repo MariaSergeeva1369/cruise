@@ -70,9 +70,11 @@ if (headerWrapperElement && navElement) {
 window.addEventListener('resize', () => {
   if (window.innerWidth >= 768) {
     scrollLock.enableScrolling();
+    focusLock.unlock();
   }
 
   if (window.innerWidth <= 768 && navElement.classList.contains('is-opened')) {
     scrollLock.disableScrolling();
+    focusLock.lock('header');
   }
 });

@@ -388,7 +388,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/montserrat-regular.woff") format("woff"), url("../fonts/montserrat-regular.woff2") format("woff2");
+  src: url("../fonts/montserrat-regular.woff2") format("woff2"), url("../fonts/montserrat-regular.woff") format("woff");
   font-display: swap;
 }
 
@@ -396,7 +396,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/montserrat-medium.woff") format("woff"), url("../fonts/montserrat-medium.woff2") format("woff2");
+  src: url("../fonts/montserrat-medium.woff2") format("woff2"), url("../fonts/montserrat-medium.woff") format("woff");
   font-display: swap;
 }
 
@@ -404,7 +404,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/montserrat-semibold.woff") format("woff"), url("../fonts/montserrat-semibold.woff2") format("woff2");
+  src: url("../fonts/montserrat-semibold.woff2") format("woff2"), url("../fonts/montserrat-semibold.woff") format("woff");
   font-display: swap;
 }
 
@@ -412,7 +412,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/montserrat-bold.woff") format("woff"), url("../fonts/montserrat-bold.woff2") format("woff2");
+  src: url("../fonts/montserrat-bold.woff2") format("woff2"), url("../fonts/montserrat-bold.woff") format("woff");
   font-display: swap;
 }
 
@@ -1216,7 +1216,7 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .cruise-card__inner-wrapper ul {
@@ -1882,7 +1882,7 @@ button,
     background-color: #f9fbfd;
     width: 89%;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
   }
 
   .header__wrapper.is-nojs {
@@ -1994,10 +1994,6 @@ button,
     align-items: flex-start;
     font-size: 18px;
     line-height: 22px;
-    height: 100%;
-    overflow: scroll;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
   }
 
   .nav.is-nojs .nav__list {
