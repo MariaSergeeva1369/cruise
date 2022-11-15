@@ -1,16 +1,15 @@
-let myMap;
-let myPlacemark;
+const ymaps = window.ymaps;
 
 ymaps.ready(init);
 
 function init() {
-  myMap = new ymaps.Map('map', {
+  let myMap = new ymaps.Map('map', {
     center: [59.937927, 30.322219],
     zoom: 16,
     controls: ['zoomControl'],
   });
 
-  myPlacemark = new ymaps.Placemark([59.937468, 30.322623], {
+  let myPlacemark = new ymaps.Placemark([59.937468, 30.322623], {
     balloonContent: '',
   }, {
     iconLayout: 'default#image',

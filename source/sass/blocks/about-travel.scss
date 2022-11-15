@@ -1,9 +1,12 @@
+.about-travel {
+  min-width: 320px;
+}
+
 .about-travel__wrapper {
   padding: 120px 32px 145px;
   max-width: 1224px;
   display: flex;
   align-items: center;
-  min-width: 320px;
 
   @include vp-1023 {
     padding: 90px 50px 94px 45px;

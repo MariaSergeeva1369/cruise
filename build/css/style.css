@@ -655,22 +655,6 @@ button,
   margin: 0 auto;
 }
 
-.wrapper.is-opened {
-  background-color: rgba(0, 43, 102, 0.5);
-}
-
-.wrapper.is-opened section {
-  min-height: 500px;
-}
-
-.wrapper.is-opened p,
-.wrapper.is-opened h1,
-.wrapper.is-opened h2,
-.wrapper.is-opened img,
-.wrapper.is-opened ul {
-  display: none;
-}
-
 .btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -998,6 +982,10 @@ button,
   fill: #f9fbfd;
 }
 
+.about-travel {
+  min-width: 320px;
+}
+
 .about-travel__wrapper {
   padding: 120px 32px 145px;
   max-width: 1224px;
@@ -1007,7 +995,6 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  min-width: 320px;
 }
 
 .about-travel__text-wrapper {
@@ -1755,11 +1742,7 @@ button,
   }
 
   .cruise-schedule__list {
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  }
-
-  .cruise-schedule__list {
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(309px, 1fr));
   }
 
   .cruise-card {
@@ -1847,6 +1830,23 @@ button,
 }
 
 @media (max-width: 767px) {
+  .main-wrapper.is-opened {
+    background-color: rgba(0, 43, 102, 0.5);
+    min-width: 320px;
+  }
+
+  .main-wrapper.is-opened section {
+    min-height: 500px;
+  }
+
+  .main-wrapper.is-opened p,
+  .main-wrapper.is-opened h1,
+  .main-wrapper.is-opened h2,
+  .main-wrapper.is-opened img,
+  .main-wrapper.is-opened ul {
+    display: none;
+  }
+
   .modal__wrapper {
     padding: 60px 16px;
   }
@@ -2159,6 +2159,10 @@ button,
     margin: 0 0 32px;
     font-size: 24px;
     line-height: 36px;
+  }
+
+  .cruise-schedule__list {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   }
 
   .cruise-card {

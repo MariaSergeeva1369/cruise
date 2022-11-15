@@ -66,3 +66,13 @@ if (headerWrapperElement && navElement) {
     navLinkElement.addEventListener('click', closeMenu);
   }
 }
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) {
+    scrollLock.enableScrolling();
+  }
+
+  if (window.innerWidth <= 768 && navElement.classList.contains('is-opened')) {
+    scrollLock.disableScrolling();
+  }
+});
