@@ -1,9 +1,9 @@
 .cruise-card {
   display: grid;
-  padding: 7px 25px 28px;
+  grid-template-rows: auto 40px;
+  padding: 32px 25px 28px;
   color: $color-alice-blue;
   background-color: $color-tangaroa;
-  height: 386px;
   min-width: 23%;
   cursor: pointer;
   background-repeat: no-repeat;
@@ -64,14 +64,20 @@
 
   @include vp-1023 {
     background-position: bottom;
-    padding: 12px 35px 35px;
+    padding: 30px 35px 35px;
+    grid-template-rows: auto 43px;
+
+    &--1 {
+      background-position: top;
+    }
   }
 
   @include vp-767 {
-    padding: 12px 25px 23px;
+    padding: 32px 25px 25px;
+
 
     &--1 {
-      background-position: 0 40%;
+      background-position: 0 30%;
     }
   }
 }
@@ -79,10 +85,13 @@
 .cruise-card h3 {
   align-self: end;
   margin: 0;
-  padding-left: 5px;
+  padding: 0;
+  padding-left: 2px;
   font-weight: 500;
   font-size: 18px;
   line-height: 18px;
+
+  grid-row: 2 / 3;
 
   @include vp-1023 {
     padding: 0;
@@ -90,7 +99,19 @@
 }
 
 .cruise-card__inner-wrapper {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+
+  min-height: 286px;
+
+  @include vp-1023 {
+    min-height: 278px;
+  }
+
+  @include vp-767 {
+    min-height: 286px;
+  }
 }
 
 // Пведение при наведении
@@ -98,6 +119,7 @@
 .cruise-card:hover,
 .cruise-card:focus,
 .cruise-card:focus-within {
+  grid-template-rows: repeat(2, auto);
   background-image: none;
   outline: none;
 }
@@ -109,6 +131,8 @@
   margin: 0 0 22px;
   align-items: flex-start;
 
+  grid-row: 1 / 2;
+
   @include vp-1023 {
     margin-bottom: 25px;
   }
@@ -117,6 +141,7 @@
 .cruise-card:hover .cruise-card__inner-wrapper,
 .cruise-card:focus .cruise-card__inner-wrapper,
 .cruise-card:focus-within .cruise-card__inner-wrapper {
+  visibility: visible;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -131,15 +156,19 @@
 
 .cruise-card__inner-wrapper li {
   &:not(:last-child) {
-    margin-bottom: 19px;
+    margin-bottom: 15px;
   }
 }
 
 .cruise-card__inner-wrapper h4 {
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   font-weight: 500;
   font-size: 14px;
   line-height: 11px;
+
+  @include vp-767 {
+    line-height: 10px;
+  }
 }
 
 .cruise-card__inner-wrapper p {
@@ -169,7 +198,7 @@
   }
 
   @include vp-767 {
-    margin-bottom: 5.1%;
+    margin-bottom: 10px;
   }
 
   @include hover-focus {

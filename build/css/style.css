@@ -823,6 +823,8 @@ button,
 
 .header__logo {
   margin-right: 25px;
+  -ms-flex-item-align: baseline;
+  align-self: baseline;
 }
 
 .nav__toggle {
@@ -938,7 +940,7 @@ button,
 }
 
 .social-list {
-  margin: 0;
+  margin: 10px 0 0 0;
   margin-left: auto;
   padding: 0;
   display: -webkit-box;
@@ -948,9 +950,6 @@ button,
   flex-wrap: wrap;
   gap: 10px 27px;
   list-style: none;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   max-width: 170px;
 }
 
@@ -1139,10 +1138,11 @@ button,
 .cruise-card {
   display: -ms-grid;
   display: grid;
-  padding: 7px 25px 28px;
+  -ms-grid-rows: auto 40px;
+  grid-template-rows: auto 40px;
+  padding: 32px 25px 28px;
   color: #f9fbfd;
   background-color: #011c40;
-  height: 386px;
   min-width: 23%;
   cursor: pointer;
   background-repeat: no-repeat;
@@ -1175,23 +1175,36 @@ button,
 }
 
 .cruise-card h3 {
-  -ms-flex-item-align: end;
   -ms-grid-row-align: end;
   align-self: end;
   margin: 0;
-  padding-left: 5px;
+  padding: 0;
+  padding-left: 2px;
   font-weight: 500;
   font-size: 18px;
   line-height: 18px;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
 }
 
 .cruise-card__inner-wrapper {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  visibility: hidden;
+  min-height: 286px;
 }
 
 .cruise-card:hover,
 .cruise-card:focus,
 .cruise-card:focus-within {
+  -ms-grid-rows: (auto)[2];
+  grid-template-rows: repeat(2, auto);
   background-image: none;
   outline: none;
 }
@@ -1204,11 +1217,15 @@ button,
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
 }
 
 .cruise-card:hover .cruise-card__inner-wrapper,
 .cruise-card:focus .cruise-card__inner-wrapper,
 .cruise-card:focus-within .cruise-card__inner-wrapper {
+  visibility: visible;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1227,11 +1244,11 @@ button,
 }
 
 .cruise-card__inner-wrapper li:not(:last-child) {
-  margin-bottom: 19px;
+  margin-bottom: 15px;
 }
 
 .cruise-card__inner-wrapper h4 {
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   font-weight: 500;
   font-size: 14px;
   line-height: 11px;
@@ -1509,6 +1526,16 @@ button,
   line-height: 27px;
 }
 
+.contacts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts__item:not(:last-child) {
+  margin-bottom: 23px;
+}
+
 .contacts__adress,
 .contacts__phone {
   position: relative;
@@ -1526,10 +1553,6 @@ button,
   top: 0;
   left: 0;
   background-repeat: no-repeat;
-}
-
-.contacts__adress {
-  margin-bottom: 23px;
 }
 
 .contacts__adress::after {
@@ -1657,6 +1680,7 @@ button,
   }
 
   .social-list {
+    margin-top: 0;
     gap: 10px 22px;
   }
 
@@ -1747,11 +1771,21 @@ button,
 
   .cruise-card {
     background-position: bottom;
-    padding: 12px 35px 35px;
+    padding: 30px 35px 35px;
+    -ms-grid-rows: auto 43px;
+    grid-template-rows: auto 43px;
+  }
+
+  .cruise-card--1 {
+    background-position: top;
   }
 
   .cruise-card h3 {
     padding: 0;
+  }
+
+  .cruise-card__inner-wrapper {
+    min-height: 278px;
   }
 
   .cruise-card:hover h3,
@@ -1819,8 +1853,11 @@ button,
     margin: 65px 0 28px;
   }
 
-  .contacts__adress {
+  .contacts__item:not(:last-child) {
     margin-bottom: 20px;
+  }
+
+  .contacts__adress {
     max-width: 340px;
   }
 
@@ -2162,15 +2199,23 @@ button,
   }
 
   .cruise-card {
-    padding: 12px 25px 23px;
+    padding: 32px 25px 25px;
   }
 
   .cruise-card--1 {
-    background-position: 0 40%;
+    background-position: 0 30%;
+  }
+
+  .cruise-card__inner-wrapper {
+    min-height: 286px;
+  }
+
+  .cruise-card__inner-wrapper h4 {
+    line-height: 10px;
   }
 
   .cruise-card__inner-wrapper a {
-    margin-bottom: 5.1%;
+    margin-bottom: 10px;
   }
 
   .booking__wrapper {

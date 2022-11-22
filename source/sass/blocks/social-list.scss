@@ -1,15 +1,15 @@
 .social-list {
-  margin: 0;
+  margin: 10px 0 0 0;
   margin-left: auto;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 10px 27px;
   list-style: none;
-  align-items: center;
   max-width: 170px;
 
   @include vp-1023 {
+    margin-top: 0;
     gap: 10px 22px;
   }
 

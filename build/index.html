@@ -65,7 +65,7 @@
           </section>
 
           <section class="advantages">
-            <a id="advantages" href="#">
+            <a id="advantages" href="#" tabindex="-1">
               <span class="visually-hidden">Блок с преимуществами</span>
             </a>
             <div class="advantages__wrapper container">
@@ -88,7 +88,7 @@
           </section>
 
           <section class="cruise-schedule">
-            <a id="cruise-schedule" href="#">
+            <a id="cruise-schedule" href="#" tabindex="-1">
               <span class="visually-hidden">Блок с расписанием круизов</span>
             </a>
             <div class="cruise-schedule__wrapper container">
@@ -330,13 +330,19 @@
             </a>
             <div class="contacts__wrapper container">
               <h2 class="visually-hidden">Наши контакты</h2>
-              <div class="contacts__map-container" ></div>
+              <div class="contacts__map-container" id="map"></div>
               <div class="contacts__content-wrapper">
                 <h3 class="contacts__title">У&nbsp;вас ещё остались вопросы или сомнения? Приезжайте к&nbsp;нам в&nbsp;офис и&nbsp;мы&nbsp;вам все расскажем.</h3>
-                <address class="contacts__adress">г. Санкт Петербург, ул.&nbsp;Большая&nbsp;Конюшенная, 19/8</address>
-                <address>
-                  <a class="contacts__phone" href="tel:88002000000">8-800-200-00-00</a>
-                </address>
+                <ul class="contacts__list">
+                  <li class="contacts__item">
+                    <address class="contacts__adress">г. Санкт Петербург, ул.&nbsp;Большая&nbsp;Конюшенная, 19/8</address>
+                  </li>
+                  <li class="contacts__item">
+                    <address>
+                      <a class="contacts__phone" href="tel:88002000000">8-800-200-00-00</a>
+                    </address>
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
