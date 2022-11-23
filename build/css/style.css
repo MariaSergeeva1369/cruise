@@ -933,10 +933,8 @@ button,
 }
 
 .footer__nav {
+  margin-top: 10px;
   margin-right: 40px;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
 }
 
 .social-list {
@@ -951,6 +949,8 @@ button,
   gap: 10px 27px;
   list-style: none;
   max-width: 170px;
+  -ms-flex-item-align: baseline;
+  align-self: baseline;
 }
 
 .social-list__item {
@@ -1136,96 +1136,72 @@ button,
 }
 
 .cruise-card {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: auto 40px;
-  grid-template-rows: auto 40px;
-  padding: 32px 25px 28px;
+  position: relative;
   color: #f9fbfd;
   background-color: #011c40;
-  min-width: 23%;
+  height: 32.33vw;
+  max-height: 386px;
+  width: 100%;
   cursor: pointer;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../img/tours/olimpiya.webp");
 }
 
-.cruise-card--1 {
-  background-image: url("../img/tours/astoria.webp");
-}
-
-.cruise-card--3 {
-  background-image: url("../img/tours/atlantis.webp");
-}
-
-.cruise-card--4 {
-  background-image: url("../img/tours/odisey.webp");
-}
-
-.cruise-card--6 {
-  background-image: url("../img/tours/avrora.webp");
-}
-
-.cruise-card--7 {
-  background-image: url("../img/tours/leonor.webp");
-}
-
-.cruise-card--8 {
-  background-image: url("../img/tours/minion.webp");
+.cruise-card img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  -o-object-position: center top;
+  object-position: center top;
 }
 
 .cruise-card h3 {
-  -ms-grid-row-align: end;
-  align-self: end;
+  position: absolute;
+  bottom: 28px;
+  left: 30px;
   margin: 0;
   padding: 0;
-  padding-left: 2px;
   font-weight: 500;
   font-size: 18px;
   line-height: 18px;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
 }
 
 .cruise-card__inner-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  visibility: hidden;
-  min-height: 286px;
+  display: none;
 }
 
 .cruise-card:hover,
 .cruise-card:focus,
 .cruise-card:focus-within {
-  -ms-grid-rows: (auto)[2];
-  grid-template-rows: repeat(2, auto);
-  background-image: none;
+  position: relative;
+  padding: 32px 25px 28px;
   outline: none;
+}
+
+.cruise-card:hover img,
+.cruise-card:focus img,
+.cruise-card:focus-within img {
+  display: none;
 }
 
 .cruise-card:hover h3,
 .cruise-card:focus h3,
 .cruise-card:focus-within h3 {
+  position: absolute;
+  top: 30px;
+  left: 25px;
+  right: 25px;
   padding: 0;
   margin: 0 0 22px;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
 }
 
 .cruise-card:hover .cruise-card__inner-wrapper,
 .cruise-card:focus .cruise-card__inner-wrapper,
 .cruise-card:focus-within .cruise-card__inner-wrapper {
-  visibility: visible;
+  position: absolute;
+  top: 73px;
+  left: 25px;
+  bottom: 35px;
+  right: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1263,7 +1239,6 @@ button,
 .cruise-card__inner-wrapper a {
   padding: 10px;
   margin-top: 2.5%;
-  margin-bottom: 2.5%;
   width: 100%;
   background-color: #f9fbfd;
   color: #011c40;
@@ -1679,9 +1654,14 @@ button,
     margin-right: 25px;
   }
 
+  .footer__nav {
+    margin-top: 3px;
+  }
+
   .social-list {
     margin-top: 0;
     gap: 10px 22px;
+    max-width: 130px;
   }
 
   .social-list__item {
@@ -1770,28 +1750,40 @@ button,
   }
 
   .cruise-card {
-    background-position: bottom;
-    padding: 30px 35px 35px;
-    -ms-grid-rows: auto 43px;
-    grid-template-rows: auto 43px;
+    height: 50.3vw;
+    max-height: none;
   }
 
-  .cruise-card--1 {
-    background-position: top;
+  .cruise-card img {
+    min-width: 309px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .cruise-card h3 {
-    padding: 0;
+    bottom: 35px;
+    left: 35px;
   }
 
-  .cruise-card__inner-wrapper {
-    min-height: 278px;
+  .cruise-card:hover,
+  .cruise-card:focus,
+  .cruise-card:focus-within {
+    padding: 30px 35px 35px;
   }
 
   .cruise-card:hover h3,
   .cruise-card:focus h3,
   .cruise-card:focus-within h3 {
-    margin-bottom: 25px;
+    top: 32px;
+    left: 35px;
+  }
+
+  .cruise-card:hover .cruise-card__inner-wrapper,
+  .cruise-card:focus .cruise-card__inner-wrapper,
+  .cruise-card:focus-within .cruise-card__inner-wrapper {
+    top: 75px;
+    left: 35px;
+    right: 35px;
   }
 
   .cruise-card__inner-wrapper a {
@@ -2118,8 +2110,7 @@ button,
   }
 
   .footer__nav {
-    margin-bottom: 26px;
-    margin-right: 0;
+    margin: 0 0 26px;
   }
 
   .social-list {
@@ -2195,23 +2186,55 @@ button,
   }
 
   .cruise-schedule__list {
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .cruise-card {
+    height: 120.63vw;
+    min-height: 386px;
+  }
+
+  .cruise-card img {
+    min-width: 270px;
+    -o-object-position: center top;
+    object-position: center top;
+  }
+
+  .cruise-card h3 {
+    bottom: 24px;
+    left: 25px;
+  }
+
+  .cruise-card:hover,
+  .cruise-card:focus,
+  .cruise-card:focus-within {
     padding: 32px 25px 25px;
   }
 
-  .cruise-card--1 {
-    background-position: 0 30%;
+  .cruise-card:hover h3,
+  .cruise-card:focus h3,
+  .cruise-card:focus-within h3 {
+    top: 31px;
+    left: 25px;
   }
 
-  .cruise-card__inner-wrapper {
-    min-height: 286px;
+  .cruise-card:hover .cruise-card__inner-wrapper,
+  .cruise-card:focus .cruise-card__inner-wrapper,
+  .cruise-card:focus-within .cruise-card__inner-wrapper {
+    top: 75px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .cruise-card__inner-wrapper li:not(:last-child) {
+    margin-bottom: 7%;
   }
 
   .cruise-card__inner-wrapper h4 {
     line-height: 10px;
+    margin-bottom: 4%;
   }
 
   .cruise-card__inner-wrapper a {
@@ -2341,34 +2364,6 @@ button,
 
   .advantages {
     background-image: url("../img/background-advantages@2x.webp");
-  }
-
-  .cruise-card {
-    background-image: url("../img/tours/olimpiya@2x.webp");
-  }
-
-  .cruise-card--1 {
-    background-image: url("../img/tours/astoria@2x.webp");
-  }
-
-  .cruise-card--3 {
-    background-image: url("../img/tours/atlantis@2x.webp");
-  }
-
-  .cruise-card--4 {
-    background-image: url("../img/tours/odisey@2x.webp");
-  }
-
-  .cruise-card--6 {
-    background-image: url("../img/tours/avrora@2x.webp");
-  }
-
-  .cruise-card--7 {
-    background-image: url("../img/tours/leonor@2x.webp");
-  }
-
-  .cruise-card--8 {
-    background-image: url("../img/tours/minion@2x.webp");
   }
 
   .booking {

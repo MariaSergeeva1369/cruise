@@ -33,11 +33,14 @@
 }
 
 .footer__nav {
+  margin-top: 10px;
   margin-right: 40px;
-  align-self: center;
+
+  @include vp-1023 {
+    margin-top: 3px;
+  }
 
   @include vp-767 {
-    margin-bottom: 26px;
-    margin-right: 0;
+    margin: 0 0 26px;
   }
 }

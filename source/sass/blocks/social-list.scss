@@ -7,10 +7,12 @@
   gap: 10px 27px;
   list-style: none;
   max-width: 170px;
+  align-self: baseline;
 
   @include vp-1023 {
     margin-top: 0;
     gap: 10px 22px;
+    max-width: 130px;
   }
 
   @include vp-767 {

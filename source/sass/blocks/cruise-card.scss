@@ -1,117 +1,64 @@
 .cruise-card {
-  display: grid;
-  grid-template-rows: auto 40px;
-  padding: 32px 25px 28px;
+  position: relative;
   color: $color-alice-blue;
   background-color: $color-tangaroa;
-  min-width: 23%;
+  height: 32.33vw;
+  max-height: 386px;
+  width: 100%;
   cursor: pointer;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../img/tours/olimpiya.webp");
-
-  @media (min-resolution: 2dppx) {
-    background-image: url("../img/tours/olimpiya@2x.webp");
-  }
-
-  &--1 {
-    background-image: url("../img/tours/astoria.webp");
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/tours/astoria@2x.webp");
-    }
-  }
-
-  &--3 {
-    background-image: url("../img/tours/atlantis.webp");
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/tours/atlantis@2x.webp");
-    }
-  }
-
-  &--4 {
-    background-image: url("../img/tours/odisey.webp");
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/tours/odisey@2x.webp");
-    }
-  }
-
-  &--6 {
-    background-image: url("../img/tours/avrora.webp");
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/tours/avrora@2x.webp");
-    }
-  }
-
-  &--7 {
-    background-image: url("../img/tours/leonor.webp");
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/tours/leonor@2x.webp");
-    }
-  }
-
-  &--8 {
-    background-image: url("../img/tours/minion.webp");
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/tours/minion@2x.webp");
-    }
-  }
 
   @include vp-1023 {
-    background-position: bottom;
-    padding: 30px 35px 35px;
-    grid-template-rows: auto 43px;
-
-    &--1 {
-      background-position: top;
-    }
+    height: 50.3vw;
+    max-height: none;
   }
 
   @include vp-767 {
-    padding: 32px 25px 25px;
+    height: 120.63vw;
+    min-height: 386px;
+  }
+}
 
+.cruise-card img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  object-position: center top;
 
-    &--1 {
-      background-position: 0 30%;
-    }
+  @include vp-1023 {
+    min-width: 309px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include vp-767 {
+    min-width: 270px;
+    object-position: center top;
   }
 }
 
 .cruise-card h3 {
-  align-self: end;
+  position: absolute;
+  bottom: 28px;
+  left: 30px;
   margin: 0;
   padding: 0;
-  padding-left: 2px;
   font-weight: 500;
   font-size: 18px;
   line-height: 18px;
 
-  grid-row: 2 / 3;
-
   @include vp-1023 {
-    padding: 0;
+    bottom: 35px;
+    left: 35px;
+  }
+
+  @include vp-767 {
+    bottom: 24px;
+    left: 25px;
   }
 }
 
 .cruise-card__inner-wrapper {
-  display: flex;
-  flex-direction: column;
-  visibility: hidden;
-
-  min-height: 286px;
-
-  @include vp-1023 {
-    min-height: 278px;
-  }
-
-  @include vp-767 {
-    min-height: 286px;
-  }
+  display: none;
 }
 
 // Пведение при наведении
@@ -119,32 +66,70 @@
 .cruise-card:hover,
 .cruise-card:focus,
 .cruise-card:focus-within {
-  grid-template-rows: repeat(2, auto);
-  background-image: none;
+  position: relative;
+  padding: 32px 25px 28px;
   outline: none;
+
+  @include vp-1023 {
+    padding: 30px 35px 35px;
+  }
+
+  @include vp-767 {
+    padding: 32px 25px 25px;
+  }
+}
+
+.cruise-card:hover img,
+.cruise-card:focus img,
+.cruise-card:focus-within img {
+  display: none;
 }
 
 .cruise-card:hover h3,
 .cruise-card:focus h3,
 .cruise-card:focus-within h3 {
+  position: absolute;
+  top: 30px;
+  left: 25px;
+  right: 25px;
   padding: 0;
   margin: 0 0 22px;
-  align-items: flex-start;
-
-  grid-row: 1 / 2;
 
   @include vp-1023 {
-    margin-bottom: 25px;
+    top: 32px;
+    left: 35px;
+  }
+
+  @include vp-767 {
+    top: 31px;
+    left: 25px;
   }
 }
 
 .cruise-card:hover .cruise-card__inner-wrapper,
 .cruise-card:focus .cruise-card__inner-wrapper,
 .cruise-card:focus-within .cruise-card__inner-wrapper {
-  visibility: visible;
+  position: absolute;
+  top: 73px;
+  left: 25px;
+  bottom: 35px;
+  right: 25px;
   display: flex;
   flex-direction: column;
   overflow: auto;
+
+  @include vp-1023 {
+    top: 75px;
+    left: 35px;
+    right: 35px;
+  }
+
+  @include vp-767 {
+    top: 75px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
 }
 
 .cruise-card__inner-wrapper ul {
@@ -158,6 +143,12 @@
   &:not(:last-child) {
     margin-bottom: 15px;
   }
+
+  @include vp-767 {
+    &:not(:last-child) {
+      margin-bottom: 7%;
+    }
+  }
 }
 
 .cruise-card__inner-wrapper h4 {
@@ -168,6 +159,7 @@
 
   @include vp-767 {
     line-height: 10px;
+    margin-bottom: 4%;
   }
 }
 
@@ -180,7 +172,6 @@
 .cruise-card__inner-wrapper a {
   padding: 10px;
   margin-top: 2.5%;
-  margin-bottom: 2.5%;
   width: 100%;
   background-color: $color-alice-blue;
   color: $color-tangaroa;
