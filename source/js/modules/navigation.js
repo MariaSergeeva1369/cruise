@@ -9,6 +9,7 @@ const navLinkElements = document.querySelectorAll('[data-header-nav-link]');
 const mainElement = document.querySelector('main');
 const headerElement = document.querySelector('header');
 const mainWrapperElement = document.querySelector('[data-main-wrapper]');
+const isEscapeKey = (evt) => evt.key === 'Escape';
 
 const focusLock = new FocusLock();
 const scrollLock = new ScrollLock();
@@ -39,9 +40,12 @@ const openMenu = () => {
 
   focusLock.lock('header');
   scrollLock.disableScrolling();
+
+  mainElement.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', closeMenulOnEscape);
 };
 
-const closeMenu = () => {
+function closeMenu() {
   navElement.classList.remove('is-opened');
   navElement.classList.add('is-closed');
   headerWrapperElement.classList.remove('is-opened');
@@ -50,7 +54,17 @@ const closeMenu = () => {
 
   focusLock.unlock();
   scrollLock.enableScrolling();
-};
+
+  mainElement.removeEventListener('click', closeMenu);
+  document.removeEventListener('keydown', closeMenulOnEscape);
+}
+
+function closeMenulOnEscape(evt) {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeMenu();
+  }
+}
 
 if (headerWrapperElement && navElement) {
   toggleElement.addEventListener('click', () => {
@@ -59,8 +73,6 @@ if (headerWrapperElement && navElement) {
     }
     return closeMenu();
   });
-
-  mainElement.addEventListener('click', closeMenu);
 
   for (let navLinkElement of navLinkElements) {
     navLinkElement.addEventListener('click', closeMenu);
